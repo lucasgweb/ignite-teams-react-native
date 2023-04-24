@@ -6,10 +6,17 @@ import { GroupCard } from '@components/GroupCard';
 import { FlatList } from 'react-native';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 
 export const Groups = () => {
   const [groups, setGroups] = useState<Array<string>>([/* 'Galera da Rocket', 'Amigos', 'Familia', 'Galera da Rocket2', 'Amigos2', 'Familia2' */]);
+
+  const navigation = useNavigation();
+
+  function handleNewGroup() {
+    navigation.navigate('new')
+  }
 
   return (
     <Container>
@@ -25,7 +32,7 @@ export const Groups = () => {
           <GroupCard title={item} />)}
         ListEmptyComponent={() => (
           <><ListEmpty message='Que tal cadastrar a primeira turma?' />
-            <Button title='Criar nova turma' /></>
+            <Button title='Criar nova turma' onPress={handleNewGroup} /></>
         )}
       />
 
