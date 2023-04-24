@@ -12,7 +12,7 @@ import { Button } from '@components/Button';
 
 export const Players = () => {
     const [team, setTeam] = useState('Time A')
-    const [players, setPlayers] = useState(['Lucas', 'Vini', 'Bruno', 'Gabriel', 'Ricardo', 'Ana', 'Claudio', 'José']);
+    const [players, setPlayers] = useState([]);
     return (
         <Container>
             <Header showBackButton />
